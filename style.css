@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P:regular);
+@import url(https://fonts.googleapis.com/css?family=Cause:100,200,300,regular,500,600,700,800,900);
 .container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;     
     gap: 10px;               
     max-width: 800px;
@@ -32,7 +33,7 @@
     --achiv-color: rgb(90, 44, 254);
     color: var(--achiv-color);
     font-family: 'Press Start 2P', cursive;
-    font-size: 28px;
+    font-size: 20px;
     margin-top: 475px;
     text-align: center;
     text-transform: uppercase;
@@ -47,7 +48,7 @@
     margin-top: -430px;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 0 0 2px var(--name-color);
+    text-shadow: 0 0 10px var(--name-color);
 }
 body {
     margin: 0;
@@ -69,4 +70,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#catInfo{
+    white-space: pre-line;/*pt \n */
+    --text-color: rgb(90, 44, 254);
+    color: var(--text-color);
+    font-family: 'Cause', regular;
+    --fontSize:25px;
+    font-size:var(--fontSize);
+    margin-top: 7px;
+    text-align: center;
 }

@@ -1,11 +1,12 @@
 const colors=["#e0ce85","#9972d9","#254732","#fdd7f7","#053473","#670e04"];
 const cats=["luna","nyx","scortisoara","goody","hunter","misty"];
+const textCats=["•smol kitty\n•is a sweety-pie","•is just a baby\n•purrs loudly","•shy\n•wanted war criminal","•FAT","•fast boiii\n•touches grass","•hates everyone(real)\n•can open doors"]
 const nrCats=6;
 const buttonNxt = document.getElementById("buttonext");
 const buttonBack= document.getElementById("buttonback");
 let poz=0;//la ce pisica ne aflam
 
-function changeBackroundColor(color){
+function changeBackroundColor(catInfo,color){
    document.getElementById("catImg").style.setProperty("--shadow-color", color);
 }
 function changeNameColor(color){
@@ -13,6 +14,20 @@ function changeNameColor(color){
 }
 function changeAchivements(color){
     document.getElementById("achiv").style.setProperty("--achiv-color", color);
+}
+function changeTextColor(color){
+    document.getElementById("catInfo").style.setProperty("--text-color", color);
+}
+function changeText(){
+    let catInfo=document.getElementById("catInfo");
+    if(cats[poz]=="goody"){ 
+        catInfo.style.setProperty("--fontSize","40px");
+    }else{
+        catInfo.style.setProperty("--fontSize","25px");
+    }
+    catInfo.innerHTML =textCats[poz];
+    changeTextColor(colors[poz]);
+    
 }
 function changeImage() {
     const catImg = document.getElementById("catImg");
@@ -43,6 +58,7 @@ buttonNxt.addEventListener('click',()=>{
     setTimeout(() => {
         changeBackroundColor(colors[poz]);
         changeAchivements(colors[poz]);
+        changeText();
         changeNameColor();
         changeName();
     },200);
@@ -54,6 +70,7 @@ buttonBack.addEventListener('click',()=>{
     setTimeout(() => {
         changeBackroundColor(colors[poz]);
         changeAchivements(colors[poz]);
+        changeText();
         changeNameColor();
         changeName();
     },200);
