@@ -119,7 +119,7 @@ document.addEventListener('keydown',function(event){
 /*no and yes buttons */
 const OFFSET=200;
 noButton.addEventListener('click',()=>{
-    alert('Raspuns gresit');
+    alert('Wrong answer');
     window.close();
 })
 yesButton.addEventListener('click',()=>{
