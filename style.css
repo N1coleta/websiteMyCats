@@ -1,5 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P:regular);
 @import url(https://fonts.googleapis.com/css?family=Cause:100,200,300,regular,500,600,700,800,900);
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+:root {
+  --electric-border-color: #dd8448;
+  --electric-light-color: oklch(from var(--electric-border-color) l c h);
+  --gradient-color: oklch(
+    from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4
+  );
+  --color-neutral-900: oklch(0.185 0 0);
+}
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -34,7 +45,7 @@
     --achiv-color: rgb(90, 44, 254);
     color: var(--achiv-color);
     font-family: 'Press Start 2P', cursive;
-    font-size: 20px;
+    font-size: 35px;
     margin-top: 0px;
     text-align: center;
     text-transform: uppercase;
@@ -44,7 +55,7 @@
     --name-color: rgb(90, 44, 254);
     color: var(--name-color);
     font-family: 'Press Start 2P', cursive;
-    font-size: 28px;
+    font-size: 50px;
     margin: 0;
     margin-top:-70px;
     margin-bottom: 60px;
@@ -77,8 +88,88 @@ body {
     --text-color: rgb(90, 44, 254);
     color: var(--text-color);
     font-family: 'Cause', regular;
-    --fontSize:25px;
+    --fontSize:30px;
     font-size:var(--fontSize);
     margin-top: 7px;
     text-align: center;
 }
+ #no-button {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    left: 60%;
+    top: 65vh;
+    transition: top 0.15s ease-out, left 0.15s ease-out;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+}
+#yes-button{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    left: 30%;
+    top: 65vh;
+}
+/*copy-pasted off interner*/
+.gradient-border {
+  --border-width: 7px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  background: #222;
+  border-radius: 10px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 10px;
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+
+

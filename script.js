@@ -1,9 +1,11 @@
 const colors=["#e0ce85","#9972d9","#254732","#fdd7f7","#053473","#670e04"];
 const cats=["luna","nyx","scortisoara","goody","hunter","misty"];
-const textCats=["•smol kitty\n•is a sweety-pie","•is just a baby\n•purrs loudly","•shy\n•wanted war criminal","•FAT","•fast boiii\n•touches grass","•hates everyone(real)\n•can open doors"]
+const textCats=["•can sleep 25 hours in a day\n•smoll kitty","•is just a baby\n•purrs loudly","•shy\n•wanted war criminal","•FAT","•fast boiii\n•touches grass","•hates everyone(real)\n•can open doors"]
 const nrCats=6;
 const buttonNxt = document.getElementById("buttonext");
 const buttonBack= document.getElementById("buttonback");
+const noButton = document.getElementById("no-button");
+const yesButton=document.getElementById("yes-button");
 let poz=0;//la ce pisica ne aflam
 
 function changeBackroundColor(catInfo,color){
@@ -21,9 +23,9 @@ function changeTextColor(color){
 function changeText(){
     let catInfo=document.getElementById("catInfo");
     if(cats[poz]=="goody"){ 
-        catInfo.style.setProperty("--fontSize","40px");
+        catInfo.style.setProperty("--fontSize","60px");
     }else{
-        catInfo.style.setProperty("--fontSize","25px");
+        catInfo.style.setProperty("--fontSize","30px");
     }
     catInfo.innerHTML =textCats[poz];
     changeTextColor(colors[poz]);
@@ -75,3 +77,56 @@ buttonBack.addEventListener('click',()=>{
         changeName();
     },200);
 })
+
+
+/*no and yes buttons */
+const OFFSET=200;
+noButton.addEventListener('click',()=>{
+    alert('Raspuns gresit');
+    window.close();
+})
+yesButton.addEventListener('click',()=>{
+    noButton.style.display= "none";
+    yesButton.style.display="none";
+    title.style.display="none";
+    catGif.style.display="block";
+    title2.style.display="flex";
+    catImage.style.display="none";
+})
+document.addEventListener('mousemove',(e)=>{
+    const x=e.pageX;
+    const y=e.pageY;
+    const buttonBox=noButton.getBoundingClientRect();
+    const horizonalDistanceFrom=distanceFromCenter(buttonBox.x,x,buttonBox.width);
+    const verticalDistanceFrom=distanceFromCenter(buttonBox.y,y,buttonBox.height);
+    const horizonalOffset=buttonBox.width/2+OFFSET;
+    const verticalOffset=buttonBox.height/2+OFFSET;
+    if(isClose(horizonalDistanceFrom,horizonalOffset,verticalDistanceFrom,verticalOffset)){
+        setButtonPosition(
+            buttonBox.x+ horizonalOffset/horizonalDistanceFrom*10,
+            buttonBox.y+verticalOffset/verticalDistanceFrom*10
+        )
+    }
+})
+
+function isClose(horizonalDistanceFrom,horizonalOffset,verticalDistanceFrom,verticalOffset){
+    return Math.abs(horizonalDistanceFrom)<=horizonalOffset && Math.abs(verticalDistanceFrom)<=verticalOffset
+}
+function setButtonPosition(left,top){
+   const buttonBox = noButton.getBoundingClientRect();
+
+    const minX = 0;
+    const minY = 0;
+    const maxX = window.innerWidth - buttonBox.width;
+    const maxY = window.innerHeight - buttonBox.height;
+    if (left < minX) left = maxX - OFFSET;
+    else if (left > maxX) left = minX + OFFSET;
+
+    if (top < minY) top = maxY - OFFSET;
+    else if (top > maxY) top = minY + OFFSET;
+    noButton.style.top=`${top}px`;
+    noButton.style.left=`${left}px`
+}
+function distanceFromCenter(boxPosition,mousePosition,boxSize){
+    return boxPosition-mousePosition +boxSize/2;
+}
