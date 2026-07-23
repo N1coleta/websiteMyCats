@@ -8,7 +8,7 @@ const noButton = document.getElementById("no-button");
 const yesButton=document.getElementById("yes-button");
 let poz=0;//la ce pisica ne aflam
 
-function changeBackroundColor(catInfo,color){
+function changeBackroundColor(color){
    document.getElementById("catImg").style.setProperty("--shadow-color", color);
 }
 function changeNameColor(color){
