@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;     
     gap: 10px;               
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;          
 }
 
@@ -16,7 +16,8 @@
     font-family: 'Press Start 2P', cursive;
 }
 #catImg {
-    margin-top: -120px;
+    margin-top: 20px;
+    margin-bottom: 100px;
     width: 350px;
     height: 350px;
     object-fit: cover;
@@ -34,7 +35,7 @@
     color: var(--achiv-color);
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
-    margin-top: 475px;
+    margin-top: 0px;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 0 0 2px var(--name-color);
@@ -45,7 +46,8 @@
     font-family: 'Press Start 2P', cursive;
     font-size: 28px;
     margin: 0;
-    margin-top: -430px;
+    margin-top:-70px;
+    margin-bottom: 60px;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 0 0 10px var(--name-color);
@@ -61,7 +63,6 @@ body {
     font-family: sans-serif;
 }
 .button {
-
     margin-top:-125px;
     width: 100px;
     height: 100px;
