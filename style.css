@@ -3,12 +3,10 @@
     display: flex;
     justify-content: center; 
     align-items: center;     
-    gap: 100px;               
+    gap: 10px;               
     max-width: 800px;
     margin: 0 auto;          
 }
-
-
 
 .button h2 {
     color: #ffffff;
@@ -17,8 +15,9 @@
     font-family: 'Press Start 2P', cursive;
 }
 #catImg {
-    width: 400px;
-    height: 400px;
+    margin-top: -150px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     object-fit: cover; 
     --shadow-color: rgb(90, 44, 254);
@@ -26,6 +25,11 @@
         0 0 10px 4px var(--shadow-color),   
         0 0 30px 12px var(--shadow-color), 
         0 0 70px 25px var(--shadow-color); 
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out ;
+}
+#catImg.fade-out {
+    opacity: 0;
 }
 body {
     margin: 0;
@@ -37,10 +41,14 @@ body {
     background-color: #000;
     font-family: sans-serif;
 }
-
 .button {
+
+    margin-top: -150px;
     width: 100px;
     height: 100px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

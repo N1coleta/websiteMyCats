@@ -6,16 +6,28 @@ const buttonBack= document.getElementById("buttonback");
 let poz=0;//la ce pisica ne aflam
 
 function changeBackroundColor(color){
+
    document.getElementById("catImg").style.setProperty("--shadow-color", color);
 }
-function changeImage(){
-    const imgElement = document.getElementById("catImg");
-    imgElement.src = `images/${cats[poz]}.jpg`;
-    imgElement.alt = cats[poz];
+function changeImage() {
+    const catImg = document.getElementById("catImg");
+    
+    catImg.classList.add('fade-out');
+    setTimeout(() => {
+        catImg.src = `images/${cats[poz]}.jpg`;
+        catImg.alt = cats[poz];
+        catImg.classList.remove('fade-out');
+    }, 300); 
 }
 buttonNxt.addEventListener('click',()=>{
     console.log("button clicked");
     poz=(poz+1)%nrCats;
+    changeBackroundColor(colors[poz]);
+    changeImage();
+})
+buttonBack.addEventListener('click',()=>{
+    console.log("button back clicked");
+    poz=(poz-1+nrCats)%nrCats;
     changeBackroundColor(colors[poz]);
     changeImage();
 })
