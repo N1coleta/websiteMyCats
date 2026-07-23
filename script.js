@@ -1,27 +1,43 @@
-const colors=["#e0ce85","#9972d9","#254732","#fdd7f7","#053473","#670e04"];
+const colors=["#e0ce85","#9972d9","#4163a6","#fdd7f7","#5db67f","#670e04"];
 const cats=["luna","nyx","scortisoara","goody","hunter","misty"];
-const textCats=["•can sleep 25 hours in a day\n•smoll kitty","•is just a baby\n•purrs loudly","•shy\n•wanted war criminal","•FAT","•fast boiii\n•touches grass","•hates everyone(real)\n•can open doors"]
+const textCats=["•can sleep 25 hours in a day\n•smoll kitty","•is just a baby\n•purrs at 80 milion decibals","•shy\n•wanted war criminal","•FAT","•fast boiii\n•touches grass","•hates everyone(real)\n•can open doors ,no one is safe"]
 const nrCats=6;
+
 const buttonNxt = document.getElementById("buttonext");
 const buttonBack= document.getElementById("buttonback");
+
 const noButton = document.getElementById("no-button");
 const yesButton=document.getElementById("yes-button");
+const title=document.getElementById("title");
+
+const catInfo=document.getElementById("catInfo");
+const achiv= document.getElementById("achiv");
+const catName=document.getElementById("catName");
+const catImg=document.getElementById("catImg");
+
 let poz=0;//la ce pisica ne aflam
+//initial nu le afisam 
+buttonNxt.style.display ="none";
+buttonBack.style.display="none";
+
+catInfo.style.display="none";
+achiv.style.display="none";
+catName.style.display="none";
+catImg.style.display="none";
 
 function changeBackroundColor(color){
-   document.getElementById("catImg").style.setProperty("--shadow-color", color);
+    catImg.style.setProperty("--shadow-color", color);
 }
 function changeNameColor(color){
-   document.getElementById("catName").style.setProperty("--name-color", color);
+   catName.style.setProperty("--name-color", color);
 }
 function changeAchivements(color){
-    document.getElementById("achiv").style.setProperty("--achiv-color", color);
+    achiv.style.setProperty("--achiv-color", color);
 }
 function changeTextColor(color){
-    document.getElementById("catInfo").style.setProperty("--text-color", color);
+    catInfo.style.setProperty("--text-color", color);
 }
 function changeText(){
-    let catInfo=document.getElementById("catInfo");
     if(cats[poz]=="goody"){ 
         catInfo.style.setProperty("--fontSize","60px");
     }else{
@@ -32,7 +48,6 @@ function changeText(){
     
 }
 function changeImage() {
-    const catImg = document.getElementById("catImg");
     
     const fadeOut = catImg.animate(
         [{ opacity: 1 }, { opacity: 0 }],
@@ -50,10 +65,10 @@ function changeImage() {
 function changeName(){
     let newName=cats[poz];
     newName = newName.charAt(0).toUpperCase() + newName.slice(1);//pentru numele cu lit capitala
-    document.getElementById("catName").innerHTML = newName;
+    catName.innerHTML = newName;
     changeNameColor(colors[poz]);
 }
-buttonNxt.addEventListener('click',()=>{
+function goToNextCat(){
     console.log("button clicked");
     poz=(poz+1)%nrCats;
     changeImage();
@@ -64,8 +79,11 @@ buttonNxt.addEventListener('click',()=>{
         changeNameColor();
         changeName();
     },200);
+}
+buttonNxt.addEventListener('click',()=>{
+   goToNextCat();
 })
-buttonBack.addEventListener('click',()=>{
+function goBackCat(){
     console.log("button back clicked");
     poz=(poz-1+nrCats)%nrCats;
     changeImage();
@@ -76,9 +94,28 @@ buttonBack.addEventListener('click',()=>{
         changeNameColor();
         changeName();
     },200);
+}
+buttonBack.addEventListener('click',()=>{
+   goBackCat();
 })
-
-
+//ca daca apesi wasd sa mearga in fata sau spate
+document.addEventListener('keypress',function(event){
+    if(event.key=='d'||event.key=='D'){
+        goBackCat();
+    }
+    if(event.key=='a'||event.key=='A'){
+        goToNextCat();
+    }
+});
+//pentru sageti
+document.addEventListener('keydown',function(event){
+    if(event.key=="ArrowRight"){
+        goToNextCat()   
+    }
+    if(event.key=="ArrowLeft"){
+        goBackCat();
+    }
+});
 /*no and yes buttons */
 const OFFSET=200;
 noButton.addEventListener('click',()=>{
@@ -89,9 +126,13 @@ yesButton.addEventListener('click',()=>{
     noButton.style.display= "none";
     yesButton.style.display="none";
     title.style.display="none";
-    catGif.style.display="block";
-    title2.style.display="flex";
-    catImage.style.display="none";
+    buttonNxt.style.display ="flex";
+    buttonBack.style.display="flex";
+
+    catInfo.style.display="block";
+    achiv.style.display="block";
+    catName.style.display="block";
+    catImg.style.display="block";
 })
 document.addEventListener('mousemove',(e)=>{
     const x=e.pageX;
@@ -108,6 +149,7 @@ document.addEventListener('mousemove',(e)=>{
         )
     }
 })
+
 
 function isClose(horizonalDistanceFrom,horizonalOffset,verticalDistanceFrom,verticalOffset){
     return Math.abs(horizonalDistanceFrom)<=horizonalOffset && Math.abs(verticalDistanceFrom)<=verticalOffset

@@ -33,7 +33,7 @@
     height: 350px;
     object-fit: cover;
     object-fit: cover; 
-    --shadow-color: rgb(90, 44, 254);
+    --shadow-color: rgb(224, 206, 133);
     box-shadow: 
         0 0 10px 4px var(--shadow-color),   
         0 0 30px 12px var(--shadow-color), 
@@ -42,7 +42,7 @@
     transition: opacity 0.2s ease-in-out ;
 }
 #achiv{
-    --achiv-color: rgb(90, 44, 254);
+    --achiv-color: rgb(224, 206, 133);
     color: var(--achiv-color);
     font-family: 'Press Start 2P', cursive;
     font-size: 35px;
@@ -52,7 +52,7 @@
     text-shadow: 0 0 2px var(--name-color);
 }
 #catName {
-    --name-color: rgb(90, 44, 254);
+    --name-color: rgb(224, 206, 133);
     color: var(--name-color);
     font-family: 'Press Start 2P', cursive;
     font-size: 50px;
@@ -85,7 +85,7 @@ body {
 }
 #catInfo{
     white-space: pre-line;/*pt \n */
-    --text-color: rgb(90, 44, 254);
+    --text-color: rgb(224, 206, 133);
     color: var(--text-color);
     font-family: 'Cause', regular;
     --fontSize:30px;
@@ -171,5 +171,31 @@ body {
   }
 }
 
+/*more code from the internet for typewriting*/
 
 
+.typewriter h1 {
+  color: #fff;
+  font-size: 60px;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid purple; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3s steps(25, end),
+    blink-caret .7s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: purple }
+}
