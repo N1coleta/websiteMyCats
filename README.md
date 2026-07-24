@@ -15,4 +15,5 @@ const nrCats=7;
 ```
 with desired colours, the names of the cats (which must correspond with the images) and descriptions. You must choose the same number of colours, objects, and descriptions
 After that, change "nrCats" to the number of objects u have selected
+
 $${\color{red}Warning}$$: When you copy the website, it will only be locally available. I used https://vercel.com to put my project "on the web" 
