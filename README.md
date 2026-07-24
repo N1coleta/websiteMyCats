@@ -1,5 +1,6 @@
 hello! I made a website for my cats :)
-##Tutorial in case someone wants to replace the images, colours, and description##
+Link to website : https://website-my-cats-waat.vercel.app/
+##Tutorial in case someone wants to replace the images, colours, and description
 1. Pick out your desired square images and colours for the shadow background
 2. Download, extract the repo and open it in Visual Studio Code (or preferred text editor) 
 3. Rename your images to 'name.jpg' (the name will be displayed at the top, so be careful what you choose). Now, move your images to :
