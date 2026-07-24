@@ -1,5 +1,5 @@
 hello! I made a website for my cats :)<br />
-Link to website: https://website-my-cats-waat.vercel.app/<br />
+Link to website: [https://website-my-cats-waat.vercel.app/](https://www.nikilovescats.xyz/)<br />
 ## Tutorial in case someone wants to replace the images, colours, and description
 1. Pick out your desired square images and colours for the shadow background
 2. Download, extract the repo and open it in Visual Studio Code (or preferred text editor) 
