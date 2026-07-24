@@ -1,7 +1,7 @@
-const colors=["#e0ce85","#9972d9","#4163a6","#fdd7f7","#5db67f","#670e04"];
-const cats=["luna","nyx","scortisoara","goody","hunter","misty"];
-const textCats=["•can sleep 25 hours in a day\n•smoll kitty","•is just a baby\n•purrs at 80 milion decibals","•shy\n•wanted war criminal","•FAT","•fast boiii\n•touches grass","•hates everyone(real)\n•can open doors ,no one is safe"]
-const nrCats=6;
+const colors=["#e0ce85","#9972d9","#4163a6","#fdd7f7","#5db67f","#670e04","#d69b36"];
+const cats=["luna","nyx","scortisoara","goody","hunter","misty","rocky"];
+const textCats=["•can sleep 25 hours in a day\n•smol kitty","•is just a baby\n•purrs at 80 milion decibals","•shy\n•wanted war criminal","•FAT","•fast boiii\n•touches grass","•hates everyone(real)\n•can open doors ,no one is safe","•100% a cat\n•zero thoughts, head empty"]
+const nrCats=7;
 
 const buttonNxt = document.getElementById("buttonext");
 const buttonBack= document.getElementById("buttonback");
