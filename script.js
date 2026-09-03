@@ -179,5 +179,5 @@ mobileCheck = function() {
   return check;
 };
 if(mobileCheck()){
-    document.getElementById("title").h1.innerHTML="Do you want to meet<br> my cats?:3"
+    document.querySelector("#title h1").innerHTML = "Do you want to meet<br>my cats?:3";
 }
