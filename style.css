@@ -219,4 +219,22 @@ body {
   .expand-icon {
     --icon-size: 18px; 
   }
+  .gradient-border{
+    width: 100px;
+    height: 50px;
+  }
+  #catImg{
+    width: 200px;
+    height: 200px;
+  }
+  #catInfo{
+    font-size:20px;
+  }
+  .typewriter h1 {
+    font-size: 20px;
+  }
+  #achiv{
+    font-size: 20px;
+  }
+
 }
