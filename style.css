@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P:regular);
 @import url(https://fonts.googleapis.com/css?family=Cause:100,200,300,regular,500,600,700,800,900);
 @import url("https://fonts.googleapis.com/css?family=Lato:300");
+
 :root {
   --electric-border-color: #dd8448;
   --electric-light-color: oklch(from var(--electric-border-color) l c h);
@@ -94,7 +95,7 @@ body {
     text-align: center;
 }
  #no-button {
-    margin-top: 100px;
+    margin-top: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +114,7 @@ body {
   background: #222;
 }
 #yes-button{
-    margin-top: 100px;
+    margin-top: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,9 +194,29 @@ body {
   from { width: 0 }
   to { width: 100% }
 }
-
-/* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: purple }
+}
+@media (max-width: 600px) {
+  button.expand {
+    padding: 8px 16px;
+  }
+  button.expand:hover,
+  button.expand.loading {
+    padding-left: calc(12px + var(--button-height));
+    padding-right: calc(12px + var(--button-height));
+  }
+  .button-text {
+    font-size: clamp(10px, 3.2vw, 14px); 
+    white-space: normal; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center;
+  }
+  .expand-icon {
+    --icon-size: 18px; 
+  }
 }
