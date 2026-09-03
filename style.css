@@ -223,8 +223,15 @@ body {
   .gradient-border{
     width: 100px;
     height: 50px;
-    border-radius: 10px;
-    font-size: 1.2rem;
+    border-radius: 2px;
+    font-size: 0.8 rem;
+  }
+  #yes-button{
+    left: 20%;
+  }
+  
+  #no-button{
+    left: 70%;
   }
   #catImg{
     width: 200px;
@@ -239,6 +246,11 @@ body {
   }
   #achiv{
     font-size: 20px;
+  }
+  .button {
+    width: 40px; 
+    height: 50px;
+    padding: 0;
   }
 
 }
